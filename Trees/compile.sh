@@ -1,0 +1,1 @@
+gcc -Wall trees.c itp.c -o trees
