@@ -1,12 +1,17 @@
 def md(di):
     idi = {} 
-    for i,j in di.items(): 
-        idi[j] = idi.get(j, []) + [i]
-    for i,j in idi.items():
-        if len(j) == 1:
-            idi[i] = j[0]
+    for i, j in di.items():
+        if not j in idi.keys():
+            idi[j] = i
         else:
-            idi[i] = tuple(j)
+            idi[j] = (idi[j], i)
+    # for i,j in di.items(): 
+    #     idi[j] = idi.get(j, []) + [i]
+    # for i,j in idi.items():
+    #     if len(j) == 1:
+    #         idi[i] = j[0]
+    #     else:
+    #         idi[i] = tuple(j)
     return idi
 d = {"I": 123,
      "P": 325,
